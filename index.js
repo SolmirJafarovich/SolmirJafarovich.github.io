@@ -20,4 +20,16 @@ System.register(["./application.js"], function (_export, _context) {
       });
     }
   };
+  window.addEventListener('resize', resizeGame);
+
+  function resizeGame() {
+      const canvas = document.getElementById('GameCanvas');
+      const gameDiv = document.getElementById('GameDiv');
+  
+      canvas.width = gameDiv.clientWidth;
+      canvas.height = gameDiv.clientHeight;
+  }
+  
+  // Вызовите функцию resizeGame сразу после загрузки страницы, чтобы убедиться, что игра правильно инициализирована
+  resizeGame();
 });
